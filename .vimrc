@@ -21,6 +21,7 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'LukeSmithXYZ/vimling'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dense-analysis/ale'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -28,11 +29,35 @@ call plug#end()
 " Basic settings here. 
 syntax on
     set encoding=utf-8
-    set number relativenumber
+    set number 
     set showcmd
     set incsearch
     set hlsearch
 
+" Highlight past column 80
+    let &colorcolumn=join(range(80,80),",")
+    highlight ColorColumn ctermbg=Black guibg=#3b4252
+
+"      *cterm-colors*
+
+" NR-16   NR-8    COLOR NAME 
+" 0       0       Black
+" 1       4       DarkBlue
+" 2       2       DarkGreen
+" 3       6       DarkCyan
+" 4       1       DarkRed
+" 5       5       DarkMagenta
+" 6       3       Brown, DarkYellow
+" 7       7       LightGray, LightGrey, Gray, Grey
+" 8       0*      DarkGray, DarkGrey
+" 9       4*      Blue, LightBlue
+" 10      2*      Green, LightGreen
+" 11      6*      Cyan, LightCyan
+" 12      1*      Red, LightRed
+" 13      5*      Magenta, LightMagenta
+" 14      3*      Yellow, LightYellow
+" 15      7*      White
+ 
 " Enable autocompletion
 	set wildmode=longest,list,full
 
@@ -42,6 +67,9 @@ syntax on
 " Map Leader+l to toggle Latex Live Preview
     map <leader>l :LLPStartPreview <CR>
 
+" Map Leader+p to prettify in haskell
+   map <leader>p :%!stylish-haskell <CR>
+
 " Map Leader+o to toggle Spellcheck
     map <leader>o :setlocal spell! spelllang=en_us<CR>
     map <leader>s :set spelllang=es<CR>
@@ -49,7 +77,7 @@ syntax on
 " Map keys for Deadkeys, IPA, and Prose modes
     map <leader>d :call ToggleDeadKeys() <CR>
     map <leader>i :call ToggleIPA() <CR>
-    map <leader>p :call ToggleProse() <CR>
+"   map <leader>p :call ToggleProse() <CR>
 
 " Set the splits to open below or to the right
     set splitbelow splitright
@@ -89,6 +117,16 @@ syntax on
 "   let g:airline_section_warning (ycm_warning_count, syntastic-warn,
 "                                 languageclient_warning_count, whitespace)
 
+" ALE linting tool settings
+    map <leader>a :ALEToggle <CR>
+    let g:ale_sign_error = '~>'
+    let g:ale_sign_warning = '~~'
+    highlight SignColumn ctermbg=0
+    highlight ALEError ctermbg=2
+    highlight ALEErrorSign ctermbg=2
+    highlight ALEWarning ctermbg=3
+    highlight ALEWarningSign ctermbg=3
+
 " Search settings
 	set incsearch
 	set hlsearch
@@ -101,7 +139,7 @@ syntax on
 	retab
 
 " Latex live preview settings
-    let g:livepreview_previewer = 'mupdf'
+    let g:livepreview_previewer = 'zathura'
 
 " Clipboard Settings
     set clipboard=unnamedplus
