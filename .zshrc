@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cameron/.oh-my-zsh"
+export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -16,7 +17,7 @@ precmd() { print "" }
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -37,7 +38,7 @@ precmd() { print "" }
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -68,8 +69,8 @@ precmd() { print "" }
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
@@ -101,3 +102,33 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias saup="sudo apt update && sudo apt upgrade -y"
+alias tbd="markdown /home/cameron/Documents/Textbooks/Directory.md > /home/cameron/Documents/Textbooks/Directory.html && firefox /home/cameron/Documents/Textbooks/Directory.html"
+alias etbd="vim /home/cameron/Documents/Textbooks/Directory.md"
+alias tmux="tmux -2"
+alias emacs="emacs -nw"
+
+# Load user profile file
+if [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+
+export quixote="100.114.12.27"
+export caribou="100.101.1.89"
+export jlremote="jupyter lab --no-browser --ip:$caribou --port:5678"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/cameron/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/cameron/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/cameron/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/cameron/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
