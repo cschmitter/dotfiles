@@ -1,0 +1,54 @@
+#+TITLE: CARBS Plan
+#+DATE: <2021-03-05 Fri>
+
+* Design Aims
+This project is to create a shell script to run on a fresh install that will set
+up my system exactly how I like it.
+* Requirements
+| GUI         | sway              | . |
+|             | fzfmenu           | . |
+|             | j4-dmenu-desktop? | . |
+|             | Ly                |   |
+|             | azote             |   |
+|             | waybar            | . |
+|             | wl-clipboard      | . |
+|             | nerd-fonts        |   |
+| Utilities   | git               | . |
+|             | curl              | . |
+|             | wget              | . |
+|             | ripgrep           | . |
+| Internet    | tailscale         |   |
+|             | Firefox           | . |
+|             | Thunderbird       | . |
+|             | gufw              | . |
+|             | openssh           | . |
+|             | mosh              | . |
+|             | zoom              |   |
+| Terminal    | zsh               | . |
+|             | ohmyzsh           | . |
+|             | typewritten       |   |
+|             | kitty             | . |
+|             | gvim              | . |
+| Editor      | emacs-nox         | . |
+|             | latex             | . |
+|             | doom              |   |
+| Programming | anaconda/jupyter  |   |
+|             | haskell-stack     | . |
+|             | gcc, g++          | . |
+| Games       | steam             |   |
+| Firmware    | firmware-nonfree? |   |
+* Notes
+- groups cameron : cameron cdrom floppy sudo audio dip video plugdev netdev bluetooth lpadmin scanner tsusers vboxusers
+
+
+
+
+
+
+
+
+
+
+
+
+
