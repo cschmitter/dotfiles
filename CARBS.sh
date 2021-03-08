@@ -1,22 +1,28 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd /etc/apt/sources.list.d
-sudo echo "deb http://deb.debian.org/debian buster-backports main" >> sources.list
-
-# install software with apt
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y sway/buster-backports
-sudo apt install -y wget ripgrep firefox thunderbird gufw mosh zsh kitty tmux gvim emacs-nox texlive haskell-stack firmware-nonfree
-
 # set up dotfiles
 cd $HOME
 mkdir Downloads
 mkdir Documents
 mkdir Pictures
+mkdir code
 
 cp -n -l $HOME/dotfiles/* $HOME
+
+# install software with apt
+sudo echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y wget ripgrep firefox thunderbird gufw mosh zsh kitty tmux gvim emacs-nox texlive haskell-stack firmware-nonfree
+
+# build sway and install
+sudo apt install -y meson wlroots wayland wayland-protocols pcre json-c pango cairo gdk-pixbuf2 scdoc
+cd code
+
+meson build
+ninja -C build
+sudo ninja -C build install
 
 # install Nerd Fonts
 cd $HOME/Downloads
