@@ -12,13 +12,16 @@ cp -n -l ~/dotfiles/* ~
 cp -n -l ~/dotfiles/.* ~
 
 # install software with xbps-install
-sudo xbps-install network-manager sway wsget ripgrep firefox thunderbird gufw mosh zsh kitty tmux vim emacs texlive-full stack
+sudo xbps-install sway unzip wget ripgrep firefox thunderbird gufw mosh zsh kitty vim emacs texlive-full stack
+sudo xbps-install NetworkManger alsa-utils pulseaudio alsa-plugins-pulseaudio
+
+# install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install Nerd Fonts
-cd ~/Downloads
-git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
-cd nerd-fonts
-./install.sh "JetBrains Mono"
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 
 # set up Tailscale VPN
 
