@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cd /etc/apt/sources.list.d
+sudo echo "deb http://deb.debian.org/debian buster-backports main" >> sources.list
+
 # install software with apt
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y gnome-core
+sudo apt install -y sway/buster-backports
 sudo apt install -y wget ripgrep firefox thunderbird gufw mosh zsh kitty tmux gvim emacs-nox texlive haskell-stack firmware-nonfree
 
 # set up dotfiles
