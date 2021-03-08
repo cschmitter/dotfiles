@@ -2,46 +2,26 @@
 set -euo pipefail
 
 # set up dotfiles
-cd $HOME
-mkdir Downloads
-mkdir Documents
-mkdir Pictures
-mkdir code
+cd ~
+mkdir -p Downloads
+mkdir -p Documents
+mkdir -p Pictures
+mkdir -p code
 
-cp -n -l $HOME/dotfiles/* $HOME
+cp -n -l ~/dotfiles/* $HOME
 
-# install software with apt
-sudo echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y wget ripgrep firefox thunderbird gufw mosh zsh kitty tmux gvim emacs-nox texlive haskell-stack firmware-nonfree
-
-# build sway and install
-sudo apt install -y meson wlroots wayland wayland-protocols pcre json-c pango cairo gdk-pixbuf2 scdoc
-cd code
-
-meson build
-ninja -C build
-sudo ninja -C build install
+# install software with xbps-install
+sudo xbps-install network-manager sway wsget ripgrep firefox thunderbird gufw mosh zsh kitty tmux vim emacs texlive-full stack
 
 # install Nerd Fonts
-cd $HOME/Downloads
+cd ~/Downloads
 git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 ./install.sh "JetBrains Mono"
 
 # set up Tailscale VPN
-curl -fsSL https://pkgs.tailscale.com/stable/debian/buster.gpg | sudo apt-key add -
-curl -fsSL https://pkgs.tailscale.com/stable/debian/buster.list | sudo tee /etc/apt/sources.list.d/tailscale.list
-
-sudo apt-get update
-sudo apt-get install -y tailscale
-sudo tailscale up
 
 # install zoom client
-cd $HOME/Downloas
-wget https://zoom.us/client/latest/zoom_amd64.deb
-sudo apt install ./zoom_amd64.deb
 
 # install oh-my-zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
