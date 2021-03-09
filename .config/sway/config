@@ -68,6 +68,9 @@ exec swayidle -w \
     # Kill focused window
     bindsym $mod+Shift+q kill
 
+    # Lauch firefox
+    bindsym Ctrl+Alt+l exec firefox
+
     # Start your launcher
     # bindsym $mod+d exec $menu
 
@@ -201,30 +204,14 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
-
 for_window [app_id="kitty"] {
            border none
-           exec swaymsg "bar mode hide"
            workspace 1
            }
 assign [app_id="kitty"] 1
 
 for_window [app_id="firefox"] {
            border none
-           exec swaymsg "bar mode hide"
            workspace 2
            }
 assign [app_id="firefox"] 2
