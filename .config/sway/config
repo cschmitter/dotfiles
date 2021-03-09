@@ -69,7 +69,8 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # bindsym $mod+d exec $menu
+    bindsym $mod+Space exec "kitty --class=fzfmenu bash -c \"fzf $* < /proc/$$/fd/0 > /proc/$$/fd/1\"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -229,8 +230,9 @@ for_window [app_id="firefox"] {
            }
 assign [app_id="firefox"] 2
 
-
-
+for_window [app_id="fzfmenu"] {
+           border none
+           }
 
 
 include /etc/sway/config.d/*
