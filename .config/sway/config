@@ -63,13 +63,13 @@ exec swayidle -w \
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+shift+q kill
 
     # Lauch firefox
-    bindsym $mod+Shift+Return exec firefox
+    exec firefox
 
     # Start your launcher
     # bindsym $mod+d exec $menu
@@ -85,7 +85,7 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Escape exec swaymsg exit
 #
 # Moving around:
 #
@@ -114,13 +114,13 @@ exec swayidle -w \
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace number "_Kitty_"
-    bindsym $mod+2 workspace number "Firefox"
-    bindsym $mod+3 workspace number "_Extra_"
+    bindsym $mod+Return workspace "  Kitty  "
+    bindsym $mod+Space workspace " Firefox "
+    bindsym $mod+Tab workspace "  Extra  "
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number "_Kitty_"
-    bindsym $mod+Shift+2 move container to workspace number "Firefox"
-    bindsym $mod+Shift+3 move container to workspace number "_Extra_"
+    bindsym $mod+Shift+1 move container to workspace "  Kitty  "
+    bindsym $mod+Shift+2 move container to workspace " Firefox "
+    bindsym $mod+Shift+3 move container to workspace "  Extra  "
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -141,10 +141,10 @@ exec swayidle -w \
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Ctrl+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Ctrl+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -192,8 +192,8 @@ bindsym $mod+r mode "resize"
 
 bar {
     mode hide
-    font "'JetBrains Mono' Normal Book 400"
-    gaps 300 462 700 462
+    font "'JetBrains Mono' Normal Book 40"
+    gaps 300 510 700 510
     height 500
     position top
 
@@ -207,14 +207,13 @@ bar {
 
 for_window [app_id="kitty"] {
            border none
-           workspace "_Kitty_"
+           workspace "  Kitty  "
            }
-assign [app_id="kitty"] "_Kitty_"
+assign [app_id="kitty"] "  Kitty  "
 
 for_window [class="Firefox"] {
            border none
-           workspace "Firefox"
            }
-assign [class="Firefox"] "Firefox"
+assign [class="Firefox"] " Firefox "
 
 include /etc/sway/config.d/*
