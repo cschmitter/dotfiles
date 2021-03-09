@@ -69,7 +69,7 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # Lauch firefox
-    bindsym Ctrl+Alt+l exec firefox
+    bindsym $mod+Shift+Return exec firefox
 
     # Start your launcher
     # bindsym $mod+d exec $menu
@@ -204,16 +204,31 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 
+bar {
+    mode hide
+    font "'JetBrains Mono' Normal Book 400"
+    gaps 300 462 700 462
+    height 500
+    position top
+
+    colors {
+           background #255561 
+           focused_workspace #C24141 #56ACBF #C24141
+           inactive_workspace #AAAAAA #316976 #AAAAAA
+
+        }
+    }
+
 for_window [app_id="kitty"] {
            border none
            workspace 1
            }
 assign [app_id="kitty"] 1
 
-for_window [app_id="firefox"] {
+for_window [class="Firefox"] {
            border none
            workspace 2
            }
-assign [app_id="firefox"] 2
+assign [class="Firefox"] 2
 
 include /etc/sway/config.d/*
