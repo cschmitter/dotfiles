@@ -8,7 +8,6 @@ mkdir -p Documents
 mkdir -p Pictures
 mkdir -p code
 
-cp -n -l ~/dotfiles/* ~
 cp -n -l ~/dotfiles/.* ~
 
 # install software with xbps-install

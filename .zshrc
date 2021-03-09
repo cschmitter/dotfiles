@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cameron/.oh-my-zsh"
@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias saup="sudo apt update && sudo apt upgrade -y"
+alias xisu="sudo xbps-install -Suv"
 alias tbd="markdown /home/cameron/Documents/Textbooks/Directory.md > /home/cameron/Documents/Textbooks/Directory.html && firefox /home/cameron/Documents/Textbooks/Directory.html"
 alias etbd="vim /home/cameron/Documents/Textbooks/Directory.md"
 alias tmux="tmux -2"
