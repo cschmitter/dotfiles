@@ -69,7 +69,7 @@ exec swayidle -w \
     bindsym $mod+shift+q kill
 
     # Lauch firefox
-    exec firefox
+    exec firefox-wayland --name="Firefox"
 
     # Start your launcher
     # bindsym $mod+d exec $menu
@@ -211,9 +211,9 @@ for_window [app_id="kitty"] {
            }
 assign [app_id="kitty"] "  Kitty  "
 
-for_window [class="Firefox"] {
+for_window [app_id="Firefox"] {
            border none
            }
-assign [class="Firefox"] " Firefox "
+assign [app_id="Firefox"] " Firefox "
 
 include /etc/sway/config.d/*

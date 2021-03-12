@@ -23,6 +23,9 @@ cd ~/.local/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 
 # set up Tailscale VPN
+cd ~/code
+wget https://pkgs.tailscale.com/stable/tailscale_1.4.5_amd64.tgz 
+
 
 # install zoom client
 
