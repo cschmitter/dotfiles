@@ -7,6 +7,5 @@ mkdir -p Documents
 mkdir -p Pictures
 mkdir -p code
 
-cp -n -l ~/.dots/.* ~
-cp -n -l -r ~/.dots/.doom.d ~
-cp -n -l -r ~/.dots/.config ~
+ln -s -F -f ~/.dots/.* ~
+ln -s -F -f ~/.dots/.config ~
