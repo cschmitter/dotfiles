@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# set up dotfiles
+cd ~
+mkdir -p Downloads
+mkdir -p Documents
+mkdir -p Pictures
+mkdir -p code
+
+cp -n -l ~/.dots/.* ~
+cp -n -l -r ~/.dots/.doom.d ~
+cp -n -l -r ~/.dots/.config ~
