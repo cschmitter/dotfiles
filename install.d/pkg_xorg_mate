@@ -1,0 +1,4 @@
+#! /usr/bin/env sh
+
+pkg install xorg mate firefox thunderbird
+

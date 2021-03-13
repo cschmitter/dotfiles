@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
 
 pkg update
-pkg install wget ripgrep fzf zsh vim-console tmux
+pkg install wget ripgrep fzf zsh vim-console tmux mosh
