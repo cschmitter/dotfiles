@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.emacs.d/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cameron/.oh-my-zsh"
@@ -73,7 +73,7 @@ precmd() { print "" }
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,33 +102,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias xisu="sudo xbps-install -Suv"
-alias tbd="markdown /home/cameron/Documents/Textbooks/Directory.md > /home/cameron/Documents/Textbooks/Directory.html && firefox /home/cameron/Documents/Textbooks/Directory.html"
-alias etbd="vim /home/cameron/Documents/Textbooks/Directory.md"
 alias tmux="tmux -2"
-alias emacs="emacs -nw"
 
 # Load user profile file
 if [ -f ~/.profile ]; then
   . ~/.profile
 fi
 
-export quixote="100.114.12.27"
 export caribou="100.101.1.89"
 export jlremote="jupyter lab --no-browser --ip:$caribou --port:5678"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/cameron/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/cameron/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/cameron/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/cameron/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
