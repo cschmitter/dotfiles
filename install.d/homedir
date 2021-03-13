@@ -6,6 +6,3 @@ mkdir -p Downloads
 mkdir -p Documents
 mkdir -p Pictures
 mkdir -p code
-
-ln -s -F -f ~/.dots/.* ~
-ln -s -F -f ~/.dots/.config ~
