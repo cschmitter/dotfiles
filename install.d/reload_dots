@@ -11,6 +11,7 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
+mkdir -p ~/.local/bin
 rm ~/.local/bin/reload_dots
 echo "Updating reload_dots script"
 ln -s $dir/install.d/reload_dots ~/.local/bin/reload_dots

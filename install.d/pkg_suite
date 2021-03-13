@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
 
 pkg update
-pkg install xorg mate wget ripgrep fzf firefox thunderbird mosh zsh vim-console unzip 
+pkg install wget ripgrep fzf zsh vim-console tmux
