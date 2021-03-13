@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+dir=~/.dots
+files="config profile tmux.conf vimrc zshrc"
+
+cd $dir
+
+for file in $files; do
+  rm ~/.$file
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/$file ~/.$file
+done
+
+rm ~/.local/bin/reload_dots
+echo "Updating reload_dots script"
+ln -s $dir/install.d/reload_dots ~/.local/bin/reload_dots
