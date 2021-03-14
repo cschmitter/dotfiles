@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
 
-pkg update
-pkg install wget ripgrep fzf zsh vim-console tmux mosh
+apt update
+apt install curl wget ripgrep fzf zsh vim tmux mosh firmware-linux
