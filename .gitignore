@@ -4,4 +4,10 @@ config/mate/
 config/menus/
 config/mimeapps.list
 config/mimeapps.list.6B89Z0
+config/evolution/
+config/gtk-3.0/
+config/pulse/
+config/user-dirs.dirs
+config/user-dirs.locale
+
 
