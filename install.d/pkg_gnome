@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
 
-apt install gnome kitty
+apt install gnome kitty papirus-icon-theme
 
