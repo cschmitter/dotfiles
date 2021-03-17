@@ -1,0 +1,11 @@
+#! /usr/bin/env sh
+
+curl -fsSL https://pkgs.tailscale.com/stable/debian/bullseye.gpg | sudo apt-key add -
+curl -fsSL https://pkgs.tailscale.com/stable/debian/bullseye.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+
+apt update
+apt install tailscale
+
+tailscale up
+
+

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 dir=~/.dots
-files="config profile tmux.conf vimrc zshrc"
+files="profile tmux.conf vimrc zshrc"
 
 cd $dir
 
@@ -9,6 +9,14 @@ for file in $files; do
   rm ~/.$file
   echo "Creating symlink to $file in home directory."
   ln -s $dir/$file ~/.$file
+done
+
+xiles=$(ls ~/.dots/config)
+
+for file in $xiles; do
+  rm -r ~/.config/$file
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/config/$file ~/.config/$file
 done
 
 mkdir -p ~/.local/bin
