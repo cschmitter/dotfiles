@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
 dir=~/.dots
-files="profile tmux.conf vimrc zshrc"
+files="doom.d profile tmux.conf vimrc zshrc"
 
 cd $dir
 
 for file in $files; do
-  rm ~/.$file
+  rm -r ~/.$file
   echo "Creating symlink to $file in home directory."
   ln -s $dir/$file ~/.$file
 done

@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH
+export PATH=$HOME/.emacs.d/bin:$HOME/.local/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cameron/.oh-my-zsh"
