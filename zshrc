@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias saup="sudo apt update & sudo apt upgrade"
+alias sapi="sudo apt install"
+alias apts="apt search"
 alias tmux="tmux -2"
 
 # Load user profile file
