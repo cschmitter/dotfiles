@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 20))
 (setq doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24))
-(setq doom-variable-pitch-font (font-spec :family "Latin Modern Mono"))
+;; (setq doom-variable-pitch-font (font-spec :family "Latin Modern Mono"))
 
 (setq-default evil-insert-state-cursor '(hbar . 3))
 
