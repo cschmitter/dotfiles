@@ -81,6 +81,10 @@
                           (load-theme 'doom-tomorrow-day)
                         (load-theme 'doom-tomorrow-night))))
 
+;; -- flycheck --
+(setq-default flycheck-indication-mode 'left-margin)
+(add-hook 'flycheck-mode-hook #'flycheck-set-indication-mode)
+
 ;; -- LaTex --
 
 ;; -- Haskell --
