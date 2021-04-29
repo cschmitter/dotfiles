@@ -107,7 +107,7 @@ alias saup="sudo apt update; sudo apt upgrade"
 alias sapi="sudo apt install"
 alias apts="apt search"
 alias tmux="tmux -2"
-alias jlremote="jupyter lab --no-browser --ip:$caribou --port:5678"
+alias jlremote="jupyter lab --no-browser --ip=$caribou --port=5678"
 alias jl="jupyter lab"
 
 # Load user profile file
