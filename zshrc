@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.emacs.d/bin:$HOME/.local/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH
+export PATH=$HOME/.emacs.d/bin:$HOME/.local/bin:/usr/local/bin:$HOME/anaconda3/bin:$HOME/.local/share/MATLAB/R2021b/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cameron/.oh-my-zsh"
@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export caribou="100.101.1.89"
+export caribou="100.90.46.125"
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -107,7 +107,8 @@ alias saup="sudo apt update; sudo apt upgrade"
 alias sapi="sudo apt install"
 alias apts="apt search"
 alias tmux="tmux -2"
-alias jlremote="jupyter lab --no-browser --ip=$caribou --port=5678"
+alias emacs="emacs -nw"
+alias jlremote="jupyter lab --no-browser --ip=0.0.0.0 --port=5678"
 alias jl="jupyter lab"
 
 # Load user profile file
