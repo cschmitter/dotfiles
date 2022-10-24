@@ -90,6 +90,9 @@
 ;; -- Haskell --
 (add-hook 'haskell-mode-hook 'flycheck-mode)
 
+;; C/C++ --
+(setq ccls-sem-highlight-method 'font-lock)
+
 ;; -- Org-mode --
 ;; This doesn't seem to work... I need to figure out doom org-mode
 (setq org-todo-keywords
