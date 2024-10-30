@@ -19,8 +19,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 20))
-(setq doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 22))
+(setq doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 26))
 ;; (setq doom-variable-pitch-font (font-spec :family "Latin Modern Mono"))
 
 (setq-default evil-insert-state-cursor '(hbar . 3))
@@ -71,6 +71,9 @@
 ;; set fullscreen on start up
 (toggle-frame-fullscreen)
 
+;; always center cursor
+(global-centered-cursor-mode)
+
 ;; -- pdf view --
 ;; causes pdfs to reload automatically when recompiled from .tex or .md
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
@@ -85,10 +88,23 @@
 (setq-default flycheck-indication-mode 'left-margin)
 (add-hook 'flycheck-mode-hook #'flycheck-set-indication-mode)
 
+;; -- ispell --
+(setq ispell-dictionary "en")
 ;; -- LaTex --
+;; for minted: add in .dir-locals.el
+;; ((latex-mode . ((TeX-command-extra-options . "-shell-escape")
+;;                 (tex-start-options . "-shell-escape")
+;;                 (eval
+;;                  . (setq-local tex-verbatim-environments
+;;                                (cons "minted" tex-verbatim-environments))))))
 
 ;; -- Haskell --
 (add-hook 'haskell-mode-hook 'flycheck-mode)
+
+;; -- Racket ;;
+(add-hook 'racket-mode-hook
+          (lambda ()
+            (set-formatter! 'raco-fmt '("raco" "fmt" "--width" "80") :modes '(racket-mode))))
 
 ;; C/C++ --
 (setq ccls-sem-highlight-method 'font-lock)
@@ -97,5 +113,5 @@
 ;; This doesn't seem to work... I need to figure out doom org-mode
 (setq org-todo-keywords
       '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "TOSUBMIT(s!)"
-                  "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)"
-                  "|" "CANCELLED(c!)" "DONE(F!)")))
+         "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)"
+         "|" "CANCELLED(c!)" "DONE(F!)")))

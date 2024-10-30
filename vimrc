@@ -1,8 +1,11 @@
 " Basic and necessary
 imap jk <esc>
+
+nnoremap <space> <nop>
 let mapleader = " "
 
-"" General
+
+" General
 set number		" Show line numbers
 set linebreak		" Break lines at word (requires Wrap lines)
 set showbreak=\ -->\ \  " Wrap-broken line prefix

@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.emacs.d/bin:$HOME/.local/bin:/usr/local/bin:$HOME/anaconda3/bin:$HOME/.local/share/MATLAB/R2021b/bin:$PATH
+export PATH=$HOME/.config/emacs/bin:$HOME/.emacs.d/bin:$HOME/.local/bin:/usr/local/bin:$HOME/anaconda3/bin:$HOME/.local/share/MATLAB/R2021b/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/cameron/.oh-my-zsh"
@@ -94,7 +94,13 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+### NVM set up
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export caribou="100.90.46.125"
+export ubc="cdms@remote.students.cs.ubc.ca"
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -110,6 +116,10 @@ alias tmux="tmux -2"
 alias emacs="emacs -nw"
 alias jlremote="jupyter lab --no-browser --ip=0.0.0.0 --port=5678"
 alias jl="jupyter lab"
+alias compress="gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=x.pdf"
+alias movies="cd /home/cameron/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/dwhelper; la"
+alias watch="celluloid"
+alias silicon="java -jar ~/SummerResearch2024/silicon/target/scala-2.13/silicon.jar --numberOfParallelVerifiers 1 --z3Args \"trace=true proof=true\""
 
 # Load user profile file
 if [ -f ~/.profile ]; then
